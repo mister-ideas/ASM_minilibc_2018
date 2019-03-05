@@ -23,7 +23,7 @@ all:		$(NAME)
 			$(ASM) $(ASMFLAGS) $(SRC)
 
 $(NAME):	$(OBJ)
-			$(LD) -o $(NAME) $(OBJ)
+			$(LD) -shared -fpic -o $(NAME) $(OBJ)
 
 clean:
 			$(RM) $(OBJ)

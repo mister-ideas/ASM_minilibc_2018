@@ -2,15 +2,23 @@ BITS 64
 
 SECTION .text
 
-GLOBAL _start
+GLOBAL strlen
 
-_start:
-        PUSH    RBP
-        MOV     RBP, RSP
+strlen:
+    PUSH    RBP
+    MOV     RBP, RSP
 
-        MOV     RAX, 60
-        XOR     RDI, RDI
-        SYSCALL
+	XOR	    RCX, RCX
 
-        LEAVE
-        RET
+check_char:
+    CMP	    [RDI], BYTE 0
+	JZ	    exit
+    INC	    RDI
+	INC	    RCX
+    JMP     check_char
+
+exit:
+    MOV     RAX, RCX
+
+    LEAVE
+    RET

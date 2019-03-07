@@ -9,8 +9,8 @@ strchr:
     MOV     RBP, RSP
 
 check_char:
-    CMP     [RDI], BYTE O
-    JZ      exit
+    CMP     BYTE [RDI], 0x00
+    JZ      exit_null
     CMP	    [RDI], RSI
 	JZ	    exit
     INC	    RDI
@@ -18,6 +18,12 @@ check_char:
 
 exit:
     MOV     RAX, RDI
+
+    LEAVE
+    RET
+
+exit_null:
+    MOV     RAX, 0x00
 
     LEAVE
     RET

@@ -7,7 +7,9 @@
 
 ASM=		nasm
 
-SRC=		strlen.asm
+SRC=		strlen.asm		\
+			strchr.asm		\
+			memset.asm
 
 OBJ=		$(SRC:.asm=.o)
 
@@ -20,7 +22,7 @@ RM=			rm -f
 all:		$(NAME)
 
 %.o:		%.asm
-			$(ASM) $(ASMFLAGS) $(SRC)
+			$(ASM) $(ASMFLAGS) $^
 
 $(NAME):	$(OBJ)
 			$(LD) -shared -fpic -o $(NAME) $(OBJ)

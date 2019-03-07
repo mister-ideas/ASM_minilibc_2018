@@ -9,7 +9,8 @@ ASM=		nasm
 
 SRC=		strlen.asm		\
 			strchr.asm		\
-			memset.asm
+			memset.asm		\
+			memcpy.asm
 
 OBJ=		$(SRC:.asm=.o)
 

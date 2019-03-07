@@ -9,16 +9,16 @@ memset:
     MOV     RBP, RSP
 
     XOR     RCX, RCX
-    MOV     RAX, RDI
 
 fill_byte:
-    CMP     [RDX], [RCX]
+    CMP     RDX, RCX
     JZ      exit
-    MOV     [RDI], [RSI]
-    INC     RDI
+    MOV     [RDI + RCX], SIL
     INC     RCX
     JMP     fill_byte
 
 exit:
+    MOV     RAX, RDI
+
     LEAVE
     RET

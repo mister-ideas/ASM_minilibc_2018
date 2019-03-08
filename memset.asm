@@ -13,7 +13,8 @@ memset:
 fill_byte:
     CMP     RDX, RCX
     JZ      exit
-    MOV     [RDI + RCX], SIL
+    MOV     R8B, SIL
+    MOV     BYTE [RDI + RCX], R8B
     INC     RCX
     JMP     fill_byte
 

@@ -4,7 +4,7 @@ SECTION .text
 
 GLOBAL memcpy
 
-memset:
+memcpy:
     PUSH    RBP
     MOV     RBP, RSP
 
@@ -13,8 +13,8 @@ memset:
 fill_byte:
     CMP     RDX, RCX
     JZ      exit
-    MOV     [RDI + RCX], SIL
-    INC     RSI
+    MOV     R8B, BYTE [RSI + RCX]
+    MOV     BYTE [RDI + RCX], R8B
     INC     RCX
     JMP     fill_byte
 

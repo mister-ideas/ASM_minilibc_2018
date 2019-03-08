@@ -20,7 +20,7 @@ to_end:
 
 check_char:
     DEC     RDI
-    CMP     [RDI], SIL
+    CMP     BYTE [RDI], SIL
     JZ      exit
     CMP     [RDI], BYTE 0
     JZ      exit_null

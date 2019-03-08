@@ -10,7 +10,8 @@ ASM=		nasm
 SRC=		strlen.asm		\
 			strchr.asm		\
 			memset.asm		\
-			memcpy.asm
+			memcpy.asm		\
+			rindex.asm
 
 OBJ=		$(SRC:.asm=.o)
 

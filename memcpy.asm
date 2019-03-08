@@ -9,6 +9,7 @@ memcpy:
     MOV     RBP, RSP
 
     XOR     RCX, RCX
+    XOR     R8, R8
 
 fill_byte:
     CMP     RDX, RCX

@@ -9,10 +9,10 @@ strchr:
     MOV     RBP, RSP
 
 check_char:
-    CMP     BYTE [RDI], 0x00
-    JZ      exit_null
     CMP	    [RDI], SIL
 	JZ	    exit
+    CMP     BYTE [RDI], 0x00
+    JZ      exit_null
     INC	    RDI
     JMP     check_char
 

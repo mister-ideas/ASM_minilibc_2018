@@ -28,6 +28,7 @@ check_list:
 exit:
     ADD     RDI, RCX
     MOV     RAX, RDI
+
     LEAVE
     RET
 
@@ -39,4 +40,5 @@ exit_null:
 
 next_char:
     INC     RCX
+    XOR     R9, R9
     JMP     check_char

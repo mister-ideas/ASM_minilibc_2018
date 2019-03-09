@@ -4,7 +4,7 @@ GLOBAL strcspn
 
 SECTION .text
 
-strpbrk:
+strcspn:
     PUSH    RBP
     MOV     RBP, RSP
 
@@ -33,4 +33,5 @@ exit:
 
 next_char:
     INC     RCX
+    XOR     R9, R9
     JMP     check_char

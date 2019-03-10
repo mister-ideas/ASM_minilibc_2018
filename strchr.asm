@@ -11,7 +11,7 @@ strchr:
 check_char:
     CMP	    BYTE [RDI], SIL
 	JZ	    exit
-    CMP     [RDI], BYTE 0
+    CMP     BYTE [RDI], BYTE 0
     JZ      exit_null
     INC	    RDI
     JMP     check_char

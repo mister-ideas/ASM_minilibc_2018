@@ -11,7 +11,7 @@ strlen:
 	XOR	    RCX, RCX
 
 check_char:
-    CMP	    [RDI], BYTE 0
+    CMP	    BYTE [RDI], BYTE 0
 	JZ	    exit
     INC	    RDI
 	INC	    RCX
